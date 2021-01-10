@@ -1,7 +1,8 @@
-import re
 import random
+import re
 
 from discord.message import Message
+
 from table_top_items.calculator import calculate
 
 

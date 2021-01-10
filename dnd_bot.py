@@ -1,13 +1,12 @@
 import os
 
+from discord.ext import commands
+
 from dnd_functions.message_formatting import format_spell
-from dnd_functions.spell_level_and_school import get_spell_level_and_school
 from requests_handler.dnd_api import get_spell
 from table_top_items.calculator import calculate
 from table_top_items.coin import flip_coin
 from table_top_items.dice import roll_dice
-from discord.ext import commands
-
 
 client = commands.Bot(command_prefix="/")
 

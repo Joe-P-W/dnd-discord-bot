@@ -1,6 +1,6 @@
 import re
-from typing import Union
 from operator import pow, truediv, mul, add, sub
+from typing import Union
 
 operators = {
     '+': add,
