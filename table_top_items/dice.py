@@ -14,7 +14,7 @@ async def roll_dice(message: Message):
     dice = re.findall(r"(:?\d+)?d(:?\d+)?(:?kh1)?(:?kl1)?", content)
 
     for die in dice:
-        roll_info = parse_rolls(die)
+        roll_info = await parse_rolls(die)
         typed_die = f"{die[0]}d{die[1]}{die[2]}{die[3]}"
         expression = expression.replace(typed_die, roll_info["expression"], 1).strip()
         content = content.replace(typed_die, roll_info["content"], 1).strip()
@@ -24,7 +24,7 @@ async def roll_dice(message: Message):
     await channel.send(reply)
 
 
-def format_kh1_kl1(return_dict: dict, numbers: list, display_number: int) -> dict:
+async def format_kh1_kl1(return_dict: dict, numbers: list, display_number: int) -> dict:
     return_dict["content"] = "("
     found = False
     for num in numbers:
@@ -39,7 +39,7 @@ def format_kh1_kl1(return_dict: dict, numbers: list, display_number: int) -> dic
     return return_dict
 
 
-def parse_rolls(dice_info: tuple) -> dict:
+async def parse_rolls(dice_info: tuple) -> dict:
     return_dict = {}
     numbers = []
 
@@ -54,12 +54,12 @@ def parse_rolls(dice_info: tuple) -> dict:
     if dice_info[2]:
         max_number = max(numbers)
         return_dict["expression"] = "(" + str(max_number) + ")"
-        return_dict = format_kh1_kl1(return_dict, numbers, max_number)
+        return_dict = await format_kh1_kl1(return_dict, numbers, max_number)
 
     elif dice_info[3]:
         min_number = min(numbers)
         return_dict["expression"] = "(" + str(min_number) + ")"
-        return_dict = format_kh1_kl1(return_dict, numbers, min_number)
+        return_dict = await format_kh1_kl1(return_dict, numbers, min_number)
 
     else:
         return_dict["expression"] = ""
