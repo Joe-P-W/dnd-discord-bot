@@ -2,7 +2,7 @@ import os
 
 from discord.ext import commands
 
-from dnd_functions.message_formatting import format_spell
+from dnd_discord_bot.dnd_functions.message_formatting import format_spell
 from dnd_discord_bot.requests_handler.dnd_api import get_spell
 from dnd_discord_bot.table_top_items.calculator import calculate
 from dnd_discord_bot.table_top_items.coin import flip_coin
