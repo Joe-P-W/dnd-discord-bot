@@ -1,4 +1,4 @@
-from utility_functions.numbers import ordinal
+from dnd_discord_bot.utility_functions.numbers import ordinal
 
 
 async def get_spell_level_and_school(level, school):

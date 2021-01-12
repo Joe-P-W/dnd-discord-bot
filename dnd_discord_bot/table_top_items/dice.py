@@ -3,7 +3,7 @@ import re
 
 from discord.message import Message
 
-from table_top_items.calculator import calculate
+from dnd_discord_bot.table_top_items.calculator import calculate
 
 
 async def roll_dice(message: Message):

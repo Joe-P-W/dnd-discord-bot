@@ -3,20 +3,16 @@ import os
 from discord.ext import commands
 
 from dnd_functions.message_formatting import format_spell
-from requests_handler.dnd_api import get_spell
-from table_top_items.calculator import calculate
-from table_top_items.coin import flip_coin
-from table_top_items.dice import roll_dice
-
-client = commands.Bot(command_prefix="/")
+from dnd_discord_bot.requests_handler.dnd_api import get_spell
+from dnd_discord_bot.table_top_items.calculator import calculate
+from dnd_discord_bot.table_top_items.coin import flip_coin
+from dnd_discord_bot.table_top_items.dice import roll_dice
 
 
-@client.event
 async def on_ready():
     print("Bot initialised")
 
 
-@client.event
 async def on_message(message):
     if message.content.startswith("/r") or message.content.startswith("/roll"):
         await roll_dice(message)
@@ -46,4 +42,10 @@ async def on_message(message):
         await channel.send(reply)
 
 
-client.run(os.getenv("dnd_bot_token"))
+if __name__ == "__main__":
+    bot = commands.Bot(command_prefix="/")
+
+    on_read = bot.event(on_ready)
+    on_message = bot.event(on_message)
+
+    bot.run(os.getenv("dnd_bot_token"))

@@ -1,7 +1,7 @@
 import asyncio
 
-from requests_handler.async_requests import async_get
-from utility_functions.levenshtein import levenshtein_distance
+from dnd_discord_bot.requests_handler.async_requests import async_get
+from dnd_discord_bot.utility_functions.levenshtein import levenshtein_distance
 
 DND_API = "https://www.dnd5eapi.co"
 

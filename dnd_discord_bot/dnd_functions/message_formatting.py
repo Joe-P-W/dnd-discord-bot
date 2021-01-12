@@ -1,4 +1,4 @@
-from dnd_functions.spell_level_and_school import get_spell_level_and_school
+from dnd_discord_bot.dnd_functions.spell_level_and_school import get_spell_level_and_school
 
 
 MAX_MESSAGE_LENGTH = 2000
