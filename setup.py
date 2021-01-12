@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="dnd_discord_bot-Joe_P_W",
-    version="0.0.1",
+    version="0.0.2",
     author="Joe W",
     author_email="",
     description="A dnd discord bot",
