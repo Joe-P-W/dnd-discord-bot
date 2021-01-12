@@ -1,7 +1,7 @@
 # Dungeons & Dragons Discord Bot
 
 ## Invite D&D Bot to your discord server:
-https://discord.com/api/oauth2/authorize?client_id=797453784488869899&permissions=522304&scope=bot
+This has been merged into another bot. If you want to invite D&D Bot go to: https://github.com/Joe-P-W/game-discord-bot
 
 ## How to use
 ### Rolling
